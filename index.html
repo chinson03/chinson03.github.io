@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charlie Hinson | Biogerontological Research & Zoology</title>
+    <style>
+        :root {
+            --primary-blue: #2c3e50;
+            --secondary-blue: #34495e;
+            --accent-green: #27ae60;
+            --text-color: #333;
+            --bg-color: #f4f7f6;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 { color: var(--primary-blue); border-bottom: 2px solid #eee; padding-bottom: 5px; }
+        .contact-info { margin-bottom: 20px; font-size: 0.9rem; }
+        .contact-info a { color: var(--accent-green); text-decoration: none; margin: 0 10px; }
+        .experience-item, .education-item { margin-bottom: 20px; }
+        .date { font-weight: bold; color: var(--secondary-blue); float: right; }
+        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .badge { background: #eee; padding: 2px 8px; border-radius: 4px; font-size: 0.85rem; }
+        @media (max-width: 600px) {
+            .skills-grid { grid-template-columns: 1fr; }
+            .date { float: none; display: block; margin-bottom: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Charlie Hinson</h1>
+    <p>Biogerontological Researcher | Zoology Student | Computational Genomics</p>
+    <div class="contact-info">
+        <a href="mailto:charliescotthinson@gmail.com">charliescotthinson@gmail.com</a> |
+        <a href="https://github.com/chinson03">GitHub: chinson03</a> |
+        <span>Milton Keynes / Aberdeen</span>
+    </div>
+</header>
+
+<div class="container">
+    <section id="summary">
+        <h2>Professional Profile</h2>
+        <p> Motivated final year BSc Zoology student focused on biogerontology, genomics, and senescence research. Proven experience in experimental design, molecular techniques, and bioinformatics through internships at the University of Aberdeen and University of Birmingham. Seeking to contribute to cutting-edge research on ageing and lifespan extension.</p>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education-item">
+            <span class="date">2022 - 2026 (Expected)</span>
+            <h3>BSc Hons Zoology - University of Aberdeen</h3>
+            <p> <strong>Expected: 1st Class Honours.</strong> Honours project: Longitudinal study on <em>Musca domestica</em> investigating the influence of deuterium depleted water on lifespan using Cox Proportional Hazard modelling.</p>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Research & Employment</h2>
+        
+        <div class="experience-item">
+            <span class="date">May 2025 - Dec 2025</span>
+            <h3>Remote Research Assistant | University of Birmingham</h3>
+            <p> <strong>Genomics of Ageing and Rejuvenation Lab (Prof. João Pedro de Magalhães).</strong> 
+            Independently tested the longevity bottleneck hypothesis using computational genomics and ancestral trait reconstruction. Conducted dN/dS analysis on genes like PARP-1, IGF-1, and mTOR across 12 species.</p>
+        </div>
+
+        <div class="experience-item">
+            <span class="date">Aug 2024 - Oct 2024</span>
+            <h3>Undergraduate Research Assistant | University of Aberdeen</h3>
+            <p> <strong>Energetics Research Group (Dr. John Speakman).</strong> 
+            Processed 29 animals for long-term organ storage in a clean room environment. Gained experience with mammalian dissection and safety-critical lab equipment including liquid nitrogen dewars.</p>
+        </div>
+
+        <div class="experience-item">
+            <span class="date">Sept 2021 - Aug 2022</span>
+            <h3>Laboratory Technician | Walton High</h3>
+            <p> Managed lab auditing, serial dilutions, and care of living organisms (axolotl, locusts, daphnia). Handled radioactive samples and flammable materials in an educational setting.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div>
+                <h3>Programming & Software</h3>
+                <ul>
+                    <li> Python (8 years)</li>
+                    <li>
