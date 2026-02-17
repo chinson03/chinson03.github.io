@@ -3,46 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charlie Hinson | Biogerontological Research & Zoology</title>
+    <title>Charlie Hinson | Biogerontology & Zoology</title>
     <style>
         :root {
-            --primary-blue: #2c3e50;
-            --secondary-blue: #34495e;
-            --accent-green: #27ae60;
-            --text-color: #333;
-            --bg-color: #f4f7f6;
+            --bg-color: #ffffff;
+            --text-main: #2d3436;
+            --accent-color: #0984e3;
+            --secondary-color: #636e72;
+            --header-bg: #2d3436;
+            --section-gap: 2.5rem;
         }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: var(--text-main);
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            margin: 0;
+            max-width: 850px;
+            margin: 0 auto;
             padding: 0;
+            background-color: #fcfcfc;
         }
         header {
-            background-color: var(--primary-blue);
+            background-color: var(--header-bg);
             color: white;
-            padding: 2rem 1rem;
+            padding: 3rem 2rem;
             text-align: center;
+            margin-bottom: var(--section-gap);
         }
-        .container {
-            max-width: 900px;
-            margin: 20px auto;
-            background: white;
-            padding: 40px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        h1 { 
+            font-size: 2.8rem; 
+            margin: 0 0 0.5rem 0; 
+            letter-spacing: -1px; 
+            color: #ffffff; /* Explicitly white */
         }
-        h1, h2, h3 { color: var(--primary-blue); border-bottom: 2px solid #eee; padding-bottom: 5px; }
-        .contact-info { margin-bottom: 20px; font-size: 0.9rem; }
-        .contact-info a { color: var(--accent-green); text-decoration: none; margin: 0 10px; }
-        .experience-item, .education-item { margin-bottom: 20px; }
-        .date { font-weight: bold; color: var(--secondary-blue); float: right; }
-        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .badge { background: #eee; padding: 2px 8px; border-radius: 4px; font-size: 0.85rem; }
+        .subtitle { font-size: 1.1rem; color: #dfe6e9; font-weight: 500; }
+        .contact { font-size: 0.9rem; color: #b2bec3; margin-top: 1rem; }
+        .contact a { color: #ffffff; text-decoration: none; border-bottom: 1px solid #636e72; }
+        
+        .container { padding: 0 2rem 2rem 2rem; }
+
+        h2 { 
+            font-size: 1.3rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            border-bottom: 2px solid var(--accent-color); 
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .entry { margin-bottom: 1.5rem; position: relative; }
+        .entry-header { display: flex; justify-content: space-between; align-items: baseline; }
+        .entry-title { font-weight: 700; font-size: 1.1rem; }
+        .entry-location { font-style: italic; color: var(--secondary-color); }
+        .entry-date { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--accent-color); }
+
+        ul { padding-left: 1.2rem; margin-top: 0.5rem; }
+        li { margin-bottom: 0.4rem; }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        .skill-cat { font-weight: 700; margin-bottom: 0.3rem; display: block; }
+        
+        footer { margin-top: 4rem; padding-bottom: 2rem; text-align: center; font-size: 0.8rem; color: #b2bec3; }
+
         @media (max-width: 600px) {
-            .skills-grid { grid-template-columns: 1fr; }
-            .date { float: none; display: block; margin-bottom: 5px; }
+            .entry-header { flex-direction: column; }
+            .entry-date { margin-top: 0.2rem; font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -50,84 +78,91 @@
 
 <header>
     <h1>Charlie Hinson</h1>
-    <p>Biogerontological Researcher | Zoology Student | Computational Genomics</p>
-    <div class="contact-info">
-        <a href="mailto:charliescotthinson@gmail.com">charliescotthinson@gmail.com</a> |
-        <a href="https://github.com/chinson03">GitHub: chinson03</a> |
-        <span>Milton Keynes / Aberdeen</span>
+    <div class="subtitle">Biogerontological Research | Genomics | Senescence</div>
+    <div class="contact">
+        <a href="mailto:charliescotthinson@gmail.com">charliescotthinson@gmail.com</a> &bull; 
+        <a href="https://github.com/chinson03">github.com/chinson03</a> &bull; 
+        <span>Aberdeen, UK</span>
     </div>
 </header>
 
 <div class="container">
-    <section id="summary">
-        <h2>Professional Profile</h2>
-        [cite_start]<p>[cite: 7, 8, 10] Motivated final year BSc Zoology student focused on biogerontology, genomics, and senescence research. Proven experience in experimental design, molecular techniques, and bioinformatics through internships at the University of Aberdeen and University of Birmingham. Seeking to contribute to cutting-edge research on ageing and lifespan extension.</p>
-    </section>
-
-    <section id="education">
+    <section>
         <h2>Education</h2>
-        <div class="education-item">
-            <span class="date">2022 - 2026 (Expected)</span>
-            <h3>BSc Hons Zoology - University of Aberdeen</h3>
-            [cite_start]<p>[cite: 12, 13, 14] <strong>Expected: 1st Class Honours.</strong> Honours project: Longitudinal study on <em>Musca domestica</em> investigating the influence of deuterium depleted water on lifespan using Cox Proportional Hazard modelling.</p>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">BSc (Hons) Zoology</span>
+                <span class="entry-date">2022 — 2026</span>
+            </div>
+            <div class="entry-location">University of Aberdeen</div>
+            <ul>
+                <li>Expecting to graduate with a 1st class Honours in 2026[cite: 12].</li>
+                <li>Honours Project: Longitudinal study on a population of 525 <em>Musca domestica</em>, investigating the influence of deuterium depleted water on lifespan[cite: 13].</li>
+                <li>Practised invertebrate rearing, experimental design, and data analysis with R using Cox Proportional Hazard modelling[cite: 14].</li>
+            </ul>
         </div>
     </section>
 
-    <section id="experience">
-        <h2>Research & Employment</h2>
-        
-        <div class="experience-item">
-            <span class="date">May 2025 - Dec 2025</span>
-            <h3>Remote Research Assistant | University of Birmingham</h3>
-            [cite_start]<p>[cite: 21, 22, 24] <strong>Genomics of Ageing and Rejuvenation Lab (Prof. João Pedro de Magalhães).</strong> 
-            Independently tested the longevity bottleneck hypothesis using computational genomics and ancestral trait reconstruction. Conducted dN/dS analysis on genes like PARP-1, IGF-1, and mTOR across 12 species.</p>
+    <section>
+        <h2>Research Experience</h2>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">Remote Research Assistant</span>
+                <span class="entry-date">May 2025 — Dec 2025</span>
+            </div>
+            <div class="entry-location">University of Birmingham | Genomics of Ageing & Rejuvenation Lab</div>
+            <ul>
+                <li>Independently tested the longevity bottleneck hypothesis utilizing computational genomics and ancestral trait reconstruction[cite: 22].</li>
+                <li>Conducted dN/dS analysis on longevity genes (PARP-1, IGF-1, mTOR) across 12 mammalian stem clades using MEGA and Ensembl[cite: 24].</li>
+                <li>Identified purifying selective pressures in pathways relating to tissue regeneration and longevity during the Mesozoic[cite: 23].</li>
+            </ul>
         </div>
 
-        <div class="experience-item">
-            <span class="date">Aug 2024 - Oct 2024</span>
-            <h3>Undergraduate Research Assistant | University of Aberdeen</h3>
-            [cite_start]<p>[cite: 27, 28, 29] <strong>Energetics Research Group (Dr. John Speakman).</strong> 
-            Processed 29 animals for long-term organ storage in a clean room environment. Gained experience with mammalian dissection and safety-critical lab equipment including liquid nitrogen dewars.</p>
-        </div>
-
-        <div class="experience-item">
-            <span class="date">Sept 2021 - Aug 2022</span>
-            <h3>Laboratory Technician | Walton High</h3>
-            [cite_start]<p>[cite: 36, 38, 40] Managed lab auditing, serial dilutions, and care of living organisms (axolotl, locusts, daphnia). Handled radioactive samples and flammable materials in an educational setting.</p>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">Undergraduate Research Assistant</span>
+                <span class="entry-date">Aug 2024 — Oct 2024</span>
+            </div>
+            <div class="entry-location">University of Aberdeen | Energetics Research Group</div>
+            <ul>
+                <li>Contributed to diet and nutrition studies in mice, gaining mammalian dissection and medical clean room experience[cite: 28, 29].</li>
+                <li>Operated safety-critical equipment including liquid nitrogen dewars, centrifuges, and TissueLysers[cite: 29].</li>
+                <li>Maintained living colonies of <em>Musca domestica</em> for insecticidal research and honours project data collection[cite: 30].</li>
+            </ul>
         </div>
     </section>
 
-    <section id="skills">
+    <section>
         <h2>Technical Skills</h2>
-        <div class="skills-grid">
+        <div class="skills-container">
             <div>
-                <h3>Programming & Software</h3>
-                <ul>
-                    [cite_start]<li>[cite: 56] Python (8 years)</li>
-                    [cite_start]<li>[cite: 57] R / RStudio (3 years)</li>
-                    [cite_start]<li>[cite: 59, 64] MATLAB & LaTeX</li>
-                    [cite_start]<li>[cite: 24, 64] MEGA, Ensembl, NCBI Databases</li>
-                </ul>
+                <span class="skill-cat">Computational</span>
+                Python (8 yrs), R/RStudio (3 yrs), MATLAB, LaTeX, GitHub, and Linux environments[cite: 55, 56, 57, 59, 61, 64].
             </div>
             <div>
-                <h3>Languages</h3>
-                <ul>
-                    [cite_start]<li>[cite: 51] Russian (Conversational)</li>
-                    [cite_start]<li>[cite: 52] Mandarin Chinese (Conversational)</li>
-                    [cite_start]<li>[cite: 9, 53] 2025 Wuhan University Scholarship Recipient</li>
-                </ul>
+                <span class="skill-cat">Laboratory & Field</span>
+                Genomics, molecular techniques, sweep netting, G-vac sampling, and serial dilutions[cite: 8, 35, 39].
+            </div>
+            <div>
+                <span class="skill-cat">Languages</span>
+                Russian (Conversational) and Mandarin Chinese (Wuhan University Summer Language Scholarship recipient)[cite: 51, 52].
             </div>
         </div>
     </section>
 
-    <section id="memberships">
+    <section>
         <h2>Memberships</h2>
         <ul>
-            [cite_start]<li>[cite: 70] Royal Biological Society (Since 2025)</li>
-            [cite_start]<li>[cite: 71] Genetics Society (Since 2025)</li>
+            <li>Royal Biological Society (Since 2025) [cite: 70]</li>
+            <li>The Genetics Society (Since 2025) [cite: 71]</li>
+            <li>University of Aberdeen Rocketry and Space Sciences Society (Payload Design) [cite: 72]</li>
         </ul>
     </section>
 </div>
+
+<footer>
+    &copy; 2026 Charlie Hinson &bull; Built for GitHub Pages
+</footer>
 
 </body>
 </html>
