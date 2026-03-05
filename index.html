@@ -6,23 +6,22 @@
     <title>Charlie Hinson | Biogerontology & Zoology</title>
     <style>
         :root {
-            /* Design Tokens */
             --accent-color: #0984e3;
             --text-main: #1d1d1f;
             --text-muted: #636e72;
-            --header-bg: rgba(45, 52, 54, 0.85); /* Semi-transparent dark */
-            --card-bg: rgba(255, 255, 255, 0.94); /* Frosted glass effect */
+            --header-bg: rgba(45, 52, 54, 0.85); 
+            --card-bg: rgba(255, 255, 255, 0.82); /* Optimized for frost visibility */
             --section-gap: 2.5rem;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             color: var(--text-main);
             line-height: 1.6;
-            max-width: 850px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 0;
-            /* Background is handled by the slideshow */
+            background-color: #000;
         }
 
         /* --- Background Slideshow --- */
@@ -37,7 +36,7 @@
 
         .cb-slideshow:after { 
             content: '';
-            background: rgba(0, 0, 0, 0.5); /* Darkens photos for readability */
+            background: rgba(0, 0, 0, 0.4); 
         }
 
         .cb-slideshow li { list-style-type: none; }
@@ -56,7 +55,7 @@
             animation: imageAnimation 40s linear infinite 0s; 
         }
 
-        /* Photo mapping for your 8 renamed images */
+        /* Photo mapping */
         .cb-slideshow li:nth-child(1) span { background-image: url('photography/1.jpg'); }
         .cb-slideshow li:nth-child(2) span { background-image: url('photography/2.jpg'); animation-delay: 5s; }
         .cb-slideshow li:nth-child(3) span { background-image: url('photography/3.jpg'); animation-delay: 10s; }
@@ -77,97 +76,103 @@
         /* --- Header Styles --- */
         header {
             background-color: var(--header-bg);
-            backdrop-filter: blur(10px); /* Blurs photos behind header */
-            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             color: white;
             padding: 4rem 2rem;
             text-align: center;
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        h1 { 
-            font-size: 3rem; 
-            margin: 0 0 0.5rem 0; 
-            letter-spacing: -1px; 
-            font-weight: 800;
+        h1 { font-size: 3rem; margin: 0; letter-spacing: -1px; font-weight: 800; }
+        
+        .subtitle { 
+            font-size: 1rem; color: #dfe6e9; font-weight: 400;
+            letter-spacing: 2px; text-transform: uppercase; margin-top: 10px;
         }
+
+        .contact { font-size: 0.95rem; color: #b2bec3; margin-top: 1.5rem; }
+        .contact a { 
+            color: #ffffff; text-decoration: none; margin: 0 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.3); transition: 0.3s;
+        }
+        .contact a:hover { border-bottom-color: var(--accent-color); color: var(--accent-color); }
+
+        /* --- Container --- */
         .container { 
-            background: var(--card-bg); /* Use the rgba(255, 255, 255, 0.94) we set in :root */
-            backdrop-filter: blur(12px); /* This creates the "frost" */
-            -webkit-backdrop-filter: blur(12px); /* Safari support */
-            
-            padding: 3rem;
-            margin: -40px auto 4rem auto; /* Overlaps the header for depth */
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle highlight edge */
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-            
+            background: var(--card-bg);
+            backdrop-filter: blur(25px) saturate(160%);
+            -webkit-backdrop-filter: blur(25px) saturate(160%);
+            padding: 3.5rem;
+            margin: -40px 20px 2rem 20px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
             position: relative;
             z-index: 10;
-            max-width: 800px;
         }
-        
-        /* Fix for section spacing inside the frosted glass */
-        section {
-            margin-bottom: var(--section-gap);
-        }
+
+        section { margin-bottom: var(--section-gap); }
         
         h2 {
             color: var(--accent-color);
             border-bottom: 2px solid rgba(9, 132, 227, 0.2);
-            padding-bottom: 5px;
+            padding-bottom: 8px;
             margin-top: 0;
-        }
-        .subtitle { 
-            font-size: 1.2rem; 
-            color: #dfe6e9; 
-            font-weight: 400;
-            letter-spacing: 1px;
+            font-size: 1.4rem;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .contact { 
-            font-size: 0.95rem; 
-            color: #b2bec3; 
-            margin-top: 1.5rem; 
+        .entry { margin-bottom: 1.5rem; }
+        .entry-header { display: flex; justify-content: space-between; align-items: baseline; }
+        .entry-title { font-weight: 700; font-size: 1.1rem; }
+        .entry-date { font-weight: 600; color: var(--accent-color); }
+        .entry-location { font-style: italic; color: var(--text-muted); font-size: 0.95rem; }
+
+        ul { padding-left: 1.2rem; margin-top: 0.5rem; }
+        li { margin-bottom: 0.5rem; }
+
+        .video-container {
+            position: relative; padding-bottom: 56.25%; height: 0;
+            overflow: hidden; margin-top: 1.5rem; border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .skill-cat { font-weight: 800; color: var(--accent-color); display: block; margin-bottom: 0.5rem; }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            font-size: 0.9rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
-        .contact a { 
-            color: #ffffff; 
-            text-decoration: none; 
-            margin: 0 10px;
-            padding-bottom: 2px;
-            border-bottom: 1px solid rgba(255,255,255,0.3);
-            transition: border-color 0.3s;
+        @media (max-width: 600px) {
+            .entry-header { flex-direction: column; }
+            .container { padding: 2rem 1.5rem; margin: -20px 10px 2rem 10px; }
+            h1 { font-size: 2.2rem; }
         }
-
-        .contact a:hover {
-            border-bottom-color: var(--accent-color);
-        }
-        
     </style>
 </head>
 <body>
 
 <ul class="cb-slideshow">
-    <li><span>1</span></li>
-    <li><span>2</span></li>
-    <li><span>3</span></li>
-    <li><span>4</span></li>
-    <li><span>5</span></li>
-    <li><span>6</span></li>
-    <li><span>7</span></li>
-    <li><span>8</span></li>
+    <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li>
+    <li><span>5</span></li><li><span>6</span></li><li><span>7</span></li><li><span>8</span></li>
 </ul>
-    
+
 <header>
     <h1>Charlie Hinson</h1>
-    <div class="subtitle">Biogerontological Research | Genomics | Senescence</div>
+    <div class="subtitle">Biogerontology | Zoology | Genomics</div>
     <div class="contact">
-        <a href="mailto:charliescotthinson@gmail.com">charliescotthinson@gmail.com</a> &bull; 
-        <a href="https://github.com/chinson03">github.com/chinson03</a> &bull; 
-        <a href="https://linkedin.com/in/charliescotthinson">linkedin.com/in/charliescotthinson</a> &bull;
-        <span>Aberdeen | Milton Keynes</span>
+        <a href="mailto:charliescotthinson@gmail.com">Email</a> &bull; 
+        <a href="https://github.com/chinson03" target="_blank">GitHub</a> &bull; 
+        <a href="https://linkedin.com/in/charliescotthinson" target="_blank">LinkedIn</a> &bull;
+        <span>Aberdeen, UK</span>
     </div>
 </header>
 
@@ -179,33 +184,15 @@
                 <span class="entry-title">BSc (Hons) Zoology</span>
                 <span class="entry-date">2022 - 2026</span>
             </div>
-            <div class="entry-location">University of Aberdeen</div>
+            <div class="entry-location">University of Aberdeen (Expected 2:1)</div>
             <ul>
-                <li>Expecting to graduate with a 2:1 Honours in 2026.</li>
                 <li>Relevant Coursework: Genetics (Class Rep), Statistical Analysis of Biological Data, Ecological Genomics, and Comparative Physiology.</li>
-                <li>Extracurriculars: Programming, Astronomy and Meteorology, and Mandarin Chinese.</li>
+                <li>Lab Skills: ELISA, qPCR, gel electrophoresis, CRISPR blue/white screening, and mammalian dissection.</li>
+                <li>Extracurriculars: Programming, Astronomy & Meteorology, and Mandarin Chinese.</li>
             </ul>
         </div>
     </section>
-<style>
-    /* ... existing styles ... */
-    .video-container {
-        position: relative;
-        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-        height: 0;
-        overflow: hidden;
-        margin-top: 1rem;
-        border-radius: 8px;
-        border: 1px solid #dfe6e9;
-    }
-    .video-container iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-</style>
+
     <section>
         <h2>Research Experience</h2>
         <div class="entry">
@@ -213,10 +200,10 @@
                 <span class="entry-title">Honours Thesis</span>
                 <span class="entry-date">Sep 2025 - Dec 2025</span>
             </div>
-            <div class="entry-location">University of Aberdeen | Energetics Research Group (Dr. John Speakman)</div>
+            <div class="entry-location">University of Aberdeen | Energetics Research Group</div>
             <ul>
-                <li>Longitudinal study on a population of 525 <em>Musca domestica</em>, investigating the influence of deuterium depleted water on lifespan.</li>
-                <li>Utilized Cox proportional hazards modelling for statistical analysis.</li>
+                <li>Longitudinal study on 525 <em>Musca domestica</em> investigating deuterium depleted water's influence on lifespan.</li>
+                <li>Applied Cox proportional hazards modelling for survival analysis.</li>
                 <li>Currently on track for publication.</li>
             </ul>
         </div>
@@ -226,30 +213,15 @@
                 <span class="entry-title">Remote Research Assistant</span>
                 <span class="entry-date">May 2025 - Dec 2025</span>
             </div>
-            <div class="entry-location">University of Birmingham | Genomics of Ageing & Rejuvenation Lab</div>
+            <div class="entry-location">University of Birmingham | Ageing & Rejuvenation Lab</div>
             <ul>
-                <li>Independently tested the longevity bottleneck hypothesis utilizing computational genomics and ancestral trait reconstruction.</li>
-                <li>Conducted dN/dS analysis on longevity genes (PARP-1, IGF-1, mTOR, Photolyase) across 12 mammalian stem clades.</li>
-                <li>Identified purifying selective pressures in pathways relating to tissue regeneration during the Mesozoic.</li>
+                <li>Independently tested the longevity bottleneck hypothesis via computational genomics.</li>
+                <li>dN/dS analysis on PARP-1, IGF-1, and mTOR across 12 mammalian stem clades.</li>
+                <li>Identified purifying selective pressures in terrestrial vertebrates during the Mesozoic.</li>
             </ul>
-            
             <div class="video-container">
-            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSqURqGqUUtb9UabtZXyhdCUmhD53b4qN1cj8j2z3gAhMaO2XonaB3e9Ta2UUHTBDDPkYWFZwKdv6ns/pubembed?start=false&loop=false&delayms=3000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSqURqGqUUtb9UabtZXyhdCUmhD53b4qN1cj8j2z3gAhMaO2XonaB3e9Ta2UUHTBDDPkYWFZwKdv6ns/pubembed?start=false&loop=false&delayms=3000"></iframe>
             </div>
-            
-        </div>
-
-        <div class="entry">
-            <div class="entry-header">
-                <span class="entry-title">Undergraduate Research Assistant</span>
-                <span class="entry-date">Aug 2024 - Oct 2024</span>
-            </div>
-            <div class="entry-location">University of Aberdeen | Energetics Research Group</div>
-            <ul>
-                <li>Processed 29 animals in 3 days for a study on diet, nutrition, and fat deposition in mice.</li>
-                <li>Gained mammalian dissection, organ harvesting, and medical clean room experience.</li>
-                <li>Maintained living colonies of <em>Musca domestica</em> for insecticidal research.</li>
-            </ul>
         </div>
     </section>
     
@@ -257,23 +229,13 @@
         <h2>Employment History</h2>
         <div class="entry">
             <div class="entry-header">
-                <span class="entry-title">Bat Emergence and Re-Entry Surveyor</span>
+                <span class="entry-title">Bat Emergence Surveyor</span>
                 <span class="entry-date">Jul 2025 - Present</span>
             </div>
             <div class="entry-location">Arbtech (Freelance)</div>
             <ul>
-                <li>Utilize ultrasonic microphones, IR cameras, and heterodynes for the identification of protected bat species.</li>
-                <li>Involved in IR footage review and team-oriented fieldwork for construction site surveys.</li>
-            </ul>
-        </div>
-        <div class="entry">
-            <div class="entry-header">
-                <span class="entry-title">Ecological Survey Assistant</span>
-                <span class="entry-date">Mar 2024 - Jun 2024</span>
-            </div>
-            <div class="entry-location">Buglife</div>
-            <ul>
-                <li>Worked with conservationists on Scotland's East coast focused on the bordered brown lacewing.</li>
+                <li>Identification of protected species using ultrasonic microphones and IR cameras.</li>
+                <li>Involved in IR footage review and team-oriented fieldwork for construction surveys.</li>
             </ul>
         </div>
         <div class="entry">
@@ -283,26 +245,22 @@
             </div>
             <div class="entry-location">Walton High | Milton Keynes Education Trust</div>
             <ul>
-                <li>Managed safe usage of flammable, radioactive, and acidic materials.</li>
-                <li>Cared for and maintained captive organisms including axolotl, daphnia, and locusts.</li>
+                <li>Managed safe usage of scientific equipment, flammables, and radioactive samples.</li>
+                <li>Maintained captive organisms including axolotl, daphnia, and locusts.</li>
             </ul>
         </div>
     </section>
     
     <section>
         <h2>Technical Skills</h2>
-        <div class="skills-container">
+        <div class="skills-grid">
             <div>
                 <span class="skill-cat">Computational</span>
-                Python (8 yrs), R/RStudio (4 yrs), MATLAB (3 yrs), LaTeX, GitHub, and Linux (Mint, openSUSE).
-            </div>
-            <div>
-                <span class="skill-cat">Laboratory & Field</span>
-                Genomics, ELISA, qPCR, gel electrophoresis, CRISPR blue/white screening, sweep netting, and G-vac sampling.
+                Python (8 yrs), RStudio (4 yrs), MATLAB (3 yrs), LaTeX, and Linux (Mint, openSUSE).
             </div>
             <div>
                 <span class="skill-cat">Languages</span>
-                Russian (Conversational, 3 yrs) and Mandarin Chinese (Conversational, 2 yrs; Wuhan University Scholar).
+                Russian (Conversational) and Mandarin Chinese (2025 Wuhan University Scholar).
             </div>
         </div>
     </section>
@@ -312,9 +270,14 @@
         <ul>
             <li>Royal Biological Society (Since 2025)</li>
             <li>The Genetics Society (Since 2025)</li>
-            <li>University of Aberdeen Rocketry and Space Sciences Society (Payload Design)</li>
+            <li>University of Aberdeen Rocketry Society (Payload Design)</li>
         </ul>
     </section>
 </div>
+
+<footer>
+    <p>&copy; 2026 Charlie Hinson | Biogerontology & Zoology Portfolio</p>
+</footer>
+
 </body>
 </html>
