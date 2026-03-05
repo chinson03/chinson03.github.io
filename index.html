@@ -10,12 +10,11 @@
             --text-main: #1d1d1f;
             --text-muted: #636e72;
             --header-bg: rgba(45, 52, 54, 0.85); 
-            --card-bg: rgba(255, 255, 255, 0.82); /* Adjusted for better frost visibility */
+            --card-bg: rgba(255, 255, 255, 0.82); 
             --section-gap: 2.5rem;
         }
 
         body {
-            /* Switched to Helvetica Stack */
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             color: var(--text-main);
             line-height: 1.6;
@@ -73,12 +72,13 @@
             100% { opacity: 0; }
         }
 
+        /* --- Header Styles --- */
         header {
             background-color: var(--header-bg);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             color: white;
-            padding: 4rem 2rem 5rem 2rem; 
+            padding: 4rem 2rem 5rem 2rem;
             text-align: center;
             border-bottom: 1px solid rgba(255,255,255,0.1);
             border-bottom-left-radius: 40px;
@@ -108,6 +108,7 @@
         }
         .contact a:hover { border-bottom-color: var(--accent-color); color: var(--accent-color); }
 
+        /* --- Container --- */
         .container { 
             background: var(--card-bg);
             backdrop-filter: blur(25px) saturate(160%);
@@ -142,6 +143,27 @@
         ul { padding-left: 1.2rem; margin-top: 0.5rem; }
         li { margin-bottom: 0.6rem; }
 
+        /* --- Break-out Speaker Deck Container --- */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            margin: 2rem 0;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
         .skills-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
@@ -157,6 +179,11 @@
             opacity: 0.8;
         }
 
+        @media (max-width: 950px) {
+            .container { padding: 2.5rem 1.5rem; margin-top: -30px; }
+            h1 { font-size: 2.4rem; }
+            .entry-header { flex-direction: column; }
+        }
     </style>
 </head>
 <body>
@@ -220,6 +247,13 @@
                 <li>dN/dS analysis on PARP-1, IGF-1, and mTOR across 12 mammalian stem clades.</li>
                 <li>Identified purifying selective pressures in terrestrial vertebrates during the Mesozoic.</li>
             </ul>
+            
+            <div class="video-container">
+                <iframe 
+                    src="https://speakerdeck.com/player/c1151cc34b3242a0a0f45245802b0cb1" 
+                    title="Testing the Longevity Bottleneck Hypothesis" 
+                    allowfullscreen>
+                </iframe>
             </div>
         </div>
     </section>
