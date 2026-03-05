@@ -129,7 +129,7 @@
         li { margin-bottom: 0.5rem; }
 
         .video-container {
-            position: relative;
+            position: absolute;
             /* Increase height slightly (from 56.25% to 62%) to prevent bottom cropping */
             padding-bottom: 62%; 
             height: 0;
@@ -149,16 +149,16 @@
             background: #000; /* Black background to blend with any gaps */
         }
 
-        .video-container iframe {
+        /* .video-container iframe {
             position: absolute;
             /* Move iframe UP to hide the Speaker Deck header */
-            top: -45px; 
-            left: 0;
-            width: 120%;
+           /* top: -45px; 
+           /* left: 0;
+           /* width: 120%;
             /* Make iframe taller than the container to compensate for the shift */
-            height: calc(100% + 45px); 
-            border: 0;
-        }
+            /*height: calc(100% + 45px); 
+            /* border: 0;
+        /* }
         
         /* Ensure it stays readable on mobile */
         @media (max-width: 900px) {
