@@ -61,49 +61,110 @@
     </style>
 </head>
 <body>
-
+    
 <header>
     <h1>Charlie Hinson</h1>
     <div class="subtitle">Biogerontology | Zoology | Genomics</div>
     <div class="contact">
-        <a href="mailto:charliescotthinson@gmail.com">Email</a>
-        <a href="https://github.com/chinson03">GitHub</a>
-        <a href="https://linkedin.com/in/charliescotthinson">LinkedIn</a>
+        <a href="mailto:charliescotthinson@gmail.com">charliescotthinson@gmail.com</a>
+        <a href="https://github.com/chinson03" target="_blank">github.com/chinson03</a>
+        <a href="https://linkedin.com/in/charliescotthinson" target="_blank">linkedin.com/in/charliescotthinson</a>
+        <span>Aberdeen | Milton Keynes</span>
     </div>
 </header>
 
 <div class="container">
+    
     <section>
         <h2>Research Experience</h2>
-        <div class="slider-wrapper">
-            <div class="slides active"><img src="presentation/slide1.jpg"></div>
-            <div class="slides"><img src="presentation/slide2.jpg"></div>
-            <div class="slides"><img src="presentation/slide3.jpg"></div>
-            <div class="slides"><img src="presentation/slide4.jpg"></div>
-            <div class="slides"><img src="presentation/slide5.jpg"></div>
-            <div class="slides"><img src="presentation/slide6.jpg"></div>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">Remote Research Assistant</span>
+                <span class="entry-date">May 2025 - Dec 2025</span>
+            </div>
+            <div class="entry-location">University of Birmingham | Genomics of Ageing & Rejuvenation Lab</div>
+            <ul>
+                <li>Independently tested the longevity bottleneck hypothesis via computational genomics.</li>
+            </ul>
+            
+            <div class="slider-wrapper">
+                <div class="slides" style="display:block;"><div class="slide-number">1 / 6</div><img src="presentation/slide1.jpg"></div>
+                <div class="slides"><div class="slide-number">2 / 6</div><img src="presentation/slide2.jpg"></div>
+                <div class="slides"><div class="slide-number">3 / 6</div><img src="presentation/slide3.jpg"></div>
+                <div class="slides"><div class="slide-number">4 / 6</div><img src="presentation/slide4.jpg"></div>
+                <div class="slides"><div class="slide-number">5 / 6</div><img src="presentation/slide5.jpg"></div>
+                <div class="slides"><div class="slide-number">6 / 6</div><img src="presentation/slide6.jpg"></div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
         </div>
-    </section>
-
-    <section>
-        <h2>Employment & Skills</h2>
-        <p>Bat Emergence Surveyor, Laboratory Technician. Proficient in Python, R, MATLAB.</p>
     </section>
 </div>
 
 <script>
-    let slideIndex = 0;
-    function plusSlides(n) {
+    let slideIndex = 1;
+    function plusSlides(n) { showSlides(slideIndex += n); }
+    function showSlides(n) {
         let slides = document.getElementsByClassName("slides");
-        slides[slideIndex].style.display = "none";
-        slideIndex = (slideIndex + n + slides.length) % slides.length;
-        slides[slideIndex].style.display = "block";
+        if (n > slides.length) slideIndex = 1;
+        if (n < 1) slideIndex = slides.length;
+        for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
+        slides[slideIndex-1].style.display = "block";
     }
 </script>
+    
+<div class = "container">
+    <section>
+        <h2>Employment History</h2>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">Bat Emergence Surveyor</span>
+                <span class="entry-date">Jul 2025 - Present</span>
+            </div>
+            <div class="entry-location">Arbtech (Freelance)</div>
+            <ul>
+                <li>Identification of protected species using ultrasonic microphones and IR cameras.</li>
+                <li>Involved in IR footage review and team-oriented fieldwork for construction surveys.</li>
+            </ul>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">Laboratory Technician</span>
+                <span class="entry-date">Sep 2021 - Aug 2022</span>
+            </div>
+            <div class="entry-location">Walton High | Milton Keynes Education Trust</div>
+            <ul>
+                <li>Managed safe usage of scientific equipment, flammables, and radioactive samples.</li>
+                <li>Maintained captive organisms including axolotl, daphnia, and locusts.</li>
+            </ul>
+        </div>
+    </section>    <section>
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div>
+                <span class="skill-cat">Computational</span>
+                Python (8 yrs), R/RStudio (4 yrs), MATLAB (3 yrs), LaTeX, GitHub, and Linux (Mint, openSUSE).
+            </div>
+            <div>
+                <span class="skill-cat">Languages & Others</span>
+                Russian (Conversational), Mandarin Chinese (Wuhan University Scholar), and Mammalian Dissection.
+            </div>
+        </div>
+    </section>
 
-<footer>&copy; 2026 Charlie Hinson</footer>
+    <section>
+        <h2>Memberships</h2>
+        <ul>
+            <li>Royal Biological Society (Since 2025)</li>
+            <li>The Genetics Society (Since 2025)</li>
+            <li>University of Aberdeen Rocketry Society (Payload Design)</li>
+        </ul>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2026 Charlie Hinson | Biogerontology & Zoology Portfolio</p>
+</footer>
 
 </body>
 </html>
