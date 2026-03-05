@@ -10,12 +10,12 @@
             --text-main: #1d1d1f;
             --text-muted: #636e72;
             --header-bg: rgba(45, 52, 54, 0.7); 
-            --card-bg: rgba(255, 255, 255, 0.6); /* Optimized for frost visibility */
+            --card-bg: rgba(255, 255, 255, 0.6);
             --section-gap: 2.5rem;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             color: var(--text-main);
             line-height: 1.6;
             max-width: 900px;
@@ -23,8 +23,6 @@
             padding: 0;
             background-color: #000;
         }
-
-        /* --- Background Slideshow --- */
         .cb-slideshow, .cb-slideshow:after { 
             position: fixed;
             width: 100%;
@@ -54,8 +52,6 @@
             z-index: -1;
             animation: imageAnimation 40s linear infinite 0s; 
         }
-
-        /* Photo mapping */
         .cb-slideshow li:nth-child(1) span { background-image: url('photography/1.jpg'); }
         .cb-slideshow li:nth-child(2) span { background-image: url('photography/2.jpg'); animation-delay: 5s; }
         .cb-slideshow li:nth-child(3) span { background-image: url('photography/3.jpg'); animation-delay: 10s; }
@@ -72,8 +68,6 @@
             17.5% { opacity: 0; transform: scale(1.1); }
             100% { opacity: 0; }
         }
-
-        /* --- Header Styles --- */
         header {
             background-color: var(--header-bg);
             backdrop-filter: blur(15px);
@@ -100,7 +94,6 @@
         }
         .contact a:hover { border-bottom-color: var(--accent-color); color: var(--accent-color); }
 
-        /* --- Container --- */
         .container { 
             background: var(--card-bg);
             backdrop-filter: blur(25px) saturate(160%);
