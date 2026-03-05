@@ -73,16 +73,14 @@
             100% { opacity: 0; }
         }
 
-        /* --- Header Styles --- */
         header {
             background-color: var(--header-bg);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             color: white;
-            padding: 4rem 2rem 5rem 2rem; /* Extra bottom padding for the curve */
+            padding: 4rem 2rem 5rem 2rem; 
             text-align: center;
             border-bottom: 1px solid rgba(255,255,255,0.1);
-            /* Rounded bottom corners */
             border-bottom-left-radius: 40px;
             border-bottom-right-radius: 40px;
         }
@@ -110,7 +108,6 @@
         }
         .contact a:hover { border-bottom-color: var(--accent-color); color: var(--accent-color); }
 
-        /* --- Container --- */
         .container { 
             background: var(--card-bg);
             backdrop-filter: blur(25px) saturate(160%);
@@ -145,30 +142,6 @@
         ul { padding-left: 1.2rem; margin-top: 0.5rem; }
         li { margin-bottom: 0.6rem; }
 
-        /* --- Break-out Speaker Deck Container --- */
-        .video-container {
-            position: relative;
-            padding-bottom: 66%; /* Increased to show navigation arrows */
-            height: 0;
-            overflow: hidden;
-            margin: 2.5rem -8% 2.5rem -8%; /* Pulls wider than text */
-            width: 116%; 
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            z-index: 15;
-            background: #000;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: -45px; /* Hides Speaker Deck Header */
-            left: 0;
-            width: 100%;
-            height: calc(100% + 45px); /* Compensates for the shift */
-            border: 0;
-        }
-
         .skills-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
@@ -184,16 +157,6 @@
             opacity: 0.8;
         }
 
-        @media (max-width: 950px) {
-            .video-container {
-                width: 100%;
-                margin: 2rem 0;
-                padding-bottom: 70%;
-            }
-            .container { padding: 2.5rem 1.5rem; margin-top: -30px; }
-            h1 { font-size: 2.4rem; }
-            .entry-header { flex-direction: column; }
-        }
     </style>
 </head>
 <body>
