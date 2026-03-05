@@ -103,7 +103,25 @@
             </ul>
         </div>
     </section>
-
+<style>
+    /* ... existing styles ... */
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+        margin-top: 1rem;
+        border-radius: 8px;
+        border: 1px solid #dfe6e9;
+    }
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
     <section>
         <h2>Research Experience</h2>
         <div class="entry">
@@ -130,12 +148,13 @@
                 <li>Conducted dN/dS analysis on longevity genes (PARP-1, IGF-1, mTOR, Photolyase) across 12 mammalian stem clades.</li>
                 <li>Identified purifying selective pressures in pathways relating to tissue regeneration during the Mesozoic.</li>
             </ul>
+            
+            <div class="video-container">
+            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSqURqGqUUtb9UabtZXyhdCUmhD53b4qN1cj8j2z3gAhMaO2XonaB3e9Ta2UUHTBDDPkYWFZwKdv6ns/pubembed?start=false&loop=false&delayms=3000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+            </div>
+            
         </div>
-        <div class="entry">
-            <span class="entry-title">Testing the Longevity Bottleneck Hypothesis</span>
-            <p>A comparative genomics study identifying purifying selective pressures in terrestrial vertebrates during the Mesozoic.</p>
-            <embed src="presentation.pdf" type="application/pdf" width="100%" height="500px" />
-        </div>
+
         <div class="entry">
             <div class="entry-header">
                 <span class="entry-title">Undergraduate Research Assistant</span>
