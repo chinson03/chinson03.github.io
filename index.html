@@ -9,8 +9,8 @@
             --accent-color: #0984e3;
             --text-main: #1d1d1f;
             --text-muted: #636e72;
-            --header-bg: rgba(45, 52, 54, 0.6); 
-            --card-bg: rgba(255, 255, 255, 0.5);
+            --header-bg: rgba(45, 52, 54, 0.7); 
+            --card-bg: rgba(255, 255, 255, 0.6);
             --section-gap: 2.5rem;
         }
 
@@ -23,16 +23,33 @@
             padding: 0;
             background-color: #000;
         }
-
-        /* --- Background Slideshow --- */
         .cb-slideshow, .cb-slideshow:after { 
-            position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; 
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
         }
-        .cb-slideshow:after { content: ''; background: rgba(0, 0, 0, 0.4); }
+
+        .cb-slideshow:after { 
+            content: '';
+            background: rgba(0, 0, 0, 0.4); 
+        }
+
         .cb-slideshow li { list-style-type: none; }
+
         .cb-slideshow li span { 
-            width: 100%; height: 100%; position: absolute; top: 0; left: 0; 
-            background-size: cover; background-position: center; opacity: 0; z-index: -1; 
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            z-index: -1;
             animation: imageAnimation 40s linear infinite 0s; 
         }
         .cb-slideshow li:nth-child(1) span { background-image: url('photography/1.jpg'); }
@@ -51,55 +68,89 @@
             17.5% { opacity: 0; transform: scale(1.1); }
             100% { opacity: 0; }
         }
-
-        /* --- Header Styles --- */
         header {
             background-color: var(--header-bg);
             backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             color: white;
-            padding: 4rem 2rem 5rem 2rem;
+            padding: 4rem 2rem;
             text-align: center;
-            border-bottom-left-radius: 40px;
-            border-bottom-right-radius: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
         }
 
-        h1 { font-size: 3.2rem; margin: 0; letter-spacing: -1.5px; font-weight: 800; }
-        .subtitle { font-size: 1rem; color: #dfe6e9; letter-spacing: 2px; text-transform: uppercase; margin-top: 12px; }
-        .contact { font-size: 0.9rem; color: #b2bec3; margin-top: 2rem; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
-        .contact a { color: #ffffff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); }
+        h1 { font-size: 3rem; margin: 0; letter-spacing: -1px; font-weight: 800; }
+        
+        .subtitle { 
+            font-size: 1rem; color: #dfe6e9; font-weight: 400;
+            letter-spacing: 2px; text-transform: uppercase; margin-top: 10px;
+        }
+
+        .contact { font-size: 0.95rem; color: #b2bec3; margin-top: 1.5rem; }
+        .contact a { 
+            color: #ffffff; text-decoration: none; margin: 0 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.3); transition: 0.3s;
+        }
         .contact a:hover { border-bottom-color: var(--accent-color); color: var(--accent-color); }
 
-        /* --- Container --- */
         .container { 
             background: var(--card-bg);
-            backdrop-filter: blur(25px);
+            backdrop-filter: blur(25px) saturate(160%);
+            -webkit-backdrop-filter: blur(25px) saturate(160%);
             padding: 3.5rem;
-            margin: -45px 20px 4rem 20px;
+            margin: -40px 20px 2rem 20px;
             border-radius: 24px;
             border: 1px solid rgba(255, 255, 255, 0.4);
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-            position: relative; z-index: 10;
+            position: relative;
+            z-index: 10;
         }
 
-        /* --- Slider Styles --- */
-        .slider-wrapper { position: relative; margin: 2.5rem 0; border-radius: 15px; overflow: hidden; background: #000; }
-        .slides { display: none; width: 100%; }
-        .slides img { width: 100%; display: block; }
-        .prev, .next { cursor: pointer; position: absolute; top: 50%; padding: 16px; color: white; font-weight: bold; font-size: 24px; background: rgba(0,0,0,0.3); user-select: none; }
-        .next { right: 0; }
-        .prev:hover, .next:hover { background-color: var(--accent-color); }
-        .slide-number { color: #f2f2f2; font-size: 12px; padding: 8px; position: absolute; background: rgba(0,0,0,0.5); }
+        section { margin-bottom: var(--section-gap); }
+        
+        h2 {
+            color: var(--accent-color);
+            border-bottom: 2px solid rgba(9, 132, 227, 0.2);
+            padding-bottom: 8px;
+            margin-top: 0;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-        h2 { color: var(--accent-color); border-bottom: 2px solid rgba(9, 132, 227, 0.2); padding-bottom: 8px; font-size: 1.4rem; text-transform: uppercase; }
-        .entry { margin-bottom: 1.8rem; }
+        .entry { margin-bottom: 1.5rem; }
         .entry-header { display: flex; justify-content: space-between; align-items: baseline; }
-        .entry-title { font-weight: 700; font-size: 1.15rem; }
+        .entry-title { font-weight: 700; font-size: 1.1rem; }
         .entry-date { font-weight: 600; color: var(--accent-color); }
         .entry-location { font-style: italic; color: var(--text-muted); font-size: 0.95rem; }
-        ul { padding-left: 1.2rem; }
-        li { margin-bottom: 0.6rem; }
-        .skill-cat { font-weight: 800; color: var(--accent-color); display: block; }
-        footer { text-align: center; color: white; padding: 3rem; opacity: 0.8; }
+
+        ul { padding-left: 1.2rem; margin-top: 0.5rem; }
+        li { margin-bottom: 0.5rem; }
+
+        .video-container {
+            position: relative; padding-bottom: 56.25%; height: 0;
+            overflow: hidden; margin-top: 1.5rem; border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .skill-cat { font-weight: 800; color: var(--accent-color); display: block; margin-bottom: 0.5rem; }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            font-size: 0.9rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        @media (max-width: 600px) {
+            .entry-header { flex-direction: column; }
+            .container { padding: 2rem 1.5rem; margin: -20px 10px 2rem 10px; }
+            h1 { font-size: 2.2rem; }
+        }
     </style>
 </head>
 <body>
@@ -113,54 +164,61 @@
     <h1>Charlie Hinson</h1>
     <div class="subtitle">Biogerontology | Zoology | Genomics</div>
     <div class="contact">
-        <a href="mailto:charliescotthinson@gmail.com">charliescotthinson@gmail.com</a>
-        <a href="https://github.com/chinson03" target="_blank">github.com/chinson03</a>
-        <a href="https://linkedin.com/in/charliescotthinson" target="_blank">linkedin.com/in/charliescotthinson</a>
-        <span>Aberdeen | Milton Keynes</span>
+        <a href="mailto:charliescotthinson@gmail.com">Email</a> &bull; 
+        <a href="https://github.com/chinson03" target="_blank">GitHub</a> &bull; 
+        <a href="https://linkedin.com/in/charliescotthinson" target="_blank">LinkedIn</a> &bull;
+        <span>Aberdeen, UK</span>
     </div>
 </header>
 
 <div class="container">
-    
+    <section>
+        <h2>Education</h2>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">BSc (Hons) Zoology</span>
+                <span class="entry-date">2022 - 2026</span>
+            </div>
+            <div class="entry-location">University of Aberdeen (Expected 2:1)</div>
+            <ul>
+                <li>Relevant Coursework: Genetics (Class Rep), Statistical Analysis of Biological Data, Ecological Genomics, and Comparative Physiology.</li>
+                <li>Lab Skills: ELISA, qPCR, gel electrophoresis, CRISPR blue/white screening, and mammalian dissection.</li>
+                <li>Extracurriculars: Programming, Astronomy & Meteorology, and Mandarin Chinese.</li>
+            </ul>
+        </div>
+    </section>
+
     <section>
         <h2>Research Experience</h2>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-title">Honours Thesis</span>
+                <span class="entry-date">Sep 2025 - Dec 2025</span>
+            </div>
+            <div class="entry-location">University of Aberdeen | Energetics Research Group</div>
+            <ul>
+                <li>Longitudinal study on 525 <em>Musca domestica</em> investigating deuterium depleted water's influence on lifespan.</li>
+                <li>Applied Cox proportional hazards modelling for survival analysis.</li>
+                <li>Currently on track for publication.</li>
+            </ul>
+        </div>
+
         <div class="entry">
             <div class="entry-header">
                 <span class="entry-title">Remote Research Assistant</span>
                 <span class="entry-date">May 2025 - Dec 2025</span>
             </div>
-            <div class="entry-location">University of Birmingham | Genomics of Ageing & Rejuvenation Lab</div>
+            <div class="entry-location">University of Birmingham | Ageing & Rejuvenation Lab</div>
             <ul>
                 <li>Independently tested the longevity bottleneck hypothesis via computational genomics.</li>
+                <li>dN/dS analysis on PARP-1, IGF-1, and mTOR across 12 mammalian stem clades.</li>
+                <li>Identified purifying selective pressures in terrestrial vertebrates during the Mesozoic.</li>
             </ul>
-            
-            <div class="slider-wrapper">
-                <div class="slides" style="display:block;"><div class="slide-number">1 / 6</div><img src="presentation/slide1.jpg"></div>
-                <div class="slides"><div class="slide-number">2 / 6</div><img src="presentation/slide2.jpg"></div>
-                <div class="slides"><div class="slide-number">3 / 6</div><img src="presentation/slide3.jpg"></div>
-                <div class="slides"><div class="slide-number">4 / 6</div><img src="presentation/slide4.jpg"></div>
-                <div class="slides"><div class="slide-number">5 / 6</div><img src="presentation/slide5.jpg"></div>
-                <div class="slides"><div class="slide-number">6 / 6</div><img src="presentation/slide6.jpg"></div>
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            </div>
+            <div class="video-container">
+                <iframe class="speakerdeck-iframe" style="border: 0px; background: rgba(0, 0, 0, 0.1) padding-box; margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; --darkreader-inline-border-top: currentcolor; --darkreader-inline-border-right: currentcolor; --darkreader-inline-border-bottom: currentcolor; --darkreader-inline-border-left: currentcolor; --darkreader-inline-bgcolor: var(--darkreader-background-0000001a, rgba(0, 0, 0, 0.1)); --darkreader-inline-bgimage: none; --darkreader-inline-boxshadow: var(--darkreader-background-00000033, rgba(0, 0, 0, 0.2)) 0px 5px 40px; aspect-ratio: 560 / 315;" frameborder="0" src="https://speakerdeck.com/player/c1151cc34b3242a0a0f45245802b0cb1" title="Testing the Longevity Bottleneck Hypothesis" allowfullscreen="true" data-darkreader-inline-border-top="" data-darkreader-inline-border-right="" data-darkreader-inline-border-bottom="" data-darkreader-inline-border-left="" data-darkreader-inline-bgcolor="" data-darkreader-inline-bgimage="" data-darkreader-inline-boxshadow="" data-ratio="1.7777777777777777"></iframe>
         </div>
     </section>
-</div>
-
-<script>
-    let slideIndex = 1;
-    function plusSlides(n) { showSlides(slideIndex += n); }
-    function showSlides(n) {
-        let slides = document.getElementsByClassName("slides");
-        if (n > slides.length) slideIndex = 1;
-        if (n < 1) slideIndex = slides.length;
-        for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
-        slides[slideIndex-1].style.display = "block";
-    }
-</script>
     
-<div class = "container">
     <section>
         <h2>Employment History</h2>
         <div class="entry">
@@ -185,16 +243,18 @@
                 <li>Maintained captive organisms including axolotl, daphnia, and locusts.</li>
             </ul>
         </div>
-    </section>    <section>
+    </section>
+    
+    <section>
         <h2>Technical Skills</h2>
         <div class="skills-grid">
             <div>
                 <span class="skill-cat">Computational</span>
-                Python (8 yrs), R/RStudio (4 yrs), MATLAB (3 yrs), LaTeX, GitHub, and Linux (Mint, openSUSE).
+                Python (8 yrs), RStudio (4 yrs), MATLAB (3 yrs), LaTeX, and Linux (Mint, openSUSE).
             </div>
             <div>
-                <span class="skill-cat">Languages & Others</span>
-                Russian (Conversational), Mandarin Chinese (Wuhan University Scholar), and Mammalian Dissection.
+                <span class="skill-cat">Languages</span>
+                Russian (Conversational) and Mandarin Chinese (2025 Wuhan University Scholar).
             </div>
         </div>
     </section>
@@ -210,7 +270,7 @@
 </div>
 
 <footer>
-    <p>&copy; 2026 Charlie Hinson | Biogerontology & Zoology Portfolio</p>
+    <p>&copy; 2026 Charlie Hinson</p>
 </footer>
 
 </body>
