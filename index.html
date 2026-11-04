@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!--comment for commit  -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -161,6 +160,19 @@
             border: 0;
         }
 
+
+        .paper-viewer { margin-top:1.25rem; height:min(82vh,900px); min-height:560px; overflow:hidden; border:1px solid rgba(45,52,54,.16); border-radius:12px; background:rgba(255,255,255,.75); box-shadow:0 8px 20px rgba(0,0,0,.08); }
+        .paper-viewer iframe { display:block; width:100%; height:100%; border:0; background:white; }
+        .viewer-link { display:flex; flex-wrap:wrap; align-items:baseline; gap:.75rem; margin-top:.65rem; font-size:.9rem; }
+        .viewer-link a { color:var(--accent-color); font-weight:600; }
+        .licence-note { color:var(--text-muted); font-size:.85rem; }
+        .slide-viewer { margin-top:1.25rem; padding:.75rem; border-radius:14px; background:rgba(20,24,26,.94); box-shadow:0 10px 25px rgba(0,0,0,.18); }
+        .slide-viewer-hint { color:#dfe6e9; text-align:center; font-size:.82rem; letter-spacing:.04em; padding:.2rem 0 .7rem; }
+        .slide-track { height:min(76vh,760px); min-height:360px; overflow-y:auto; overscroll-behavior-y:contain; scroll-snap-type:y mandatory; scrollbar-color:rgba(255,255,255,.45) rgba(255,255,255,.12); scrollbar-width:thin; border-radius:8px; outline-offset:4px; }
+        .slide { position:relative; min-height:100%; height:100%; margin:0; display:flex; align-items:center; justify-content:center; scroll-snap-align:start; scroll-snap-stop:always; background:#111; }
+        .slide img { display:block; width:100%; height:100%; max-height:760px; object-fit:contain; }
+        .slide figcaption { position:absolute; right:.8rem; bottom:.65rem; padding:.2rem .55rem; border-radius:20px; color:white; background:rgba(0,0,0,.65); font-size:.78rem; font-variant-numeric:tabular-nums; }
+
         footer {
             text-align: center;
             color: white;
@@ -174,6 +186,9 @@
             .container { padding: 2rem 1.5rem; margin: -20px 10px 2rem 10px; }
             h1 { font-size: 2.2rem; }
             .entry-date { white-space: normal; }
+            .paper-viewer { min-height:420px; height:72vh; }
+            .slide-track { min-height:280px; height:68vh; }
+            .slide-viewer { padding:.5rem; }
         }
     </style>
 </head>
@@ -216,6 +231,10 @@
             </div>
             <div class="entry-authors">Audrey Riddle, Charlie Hinson, Peter Thomson, Catherine Hambly, Juliano Morimoto, John R. Speakman, Sharon E. Mitchell</div>
             <div class="entry-doi"><a href="https://doi.org/10.1016/j.jinsphys.2026.105078" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/j.jinsphys.2026.105078</a></div>
+            <div class="paper-viewer">
+                <iframe src="papers/deuterium-housefly-lifespan.pdf#view=FitH" title="Published article: Deuterium and lifespan in the adult housefly" loading="lazy"></iframe>
+            </div>
+            <p class="viewer-link"><a href="papers/deuterium-housefly-lifespan.pdf" target="_blank" rel="noopener noreferrer">Open full paper PDF</a><span class="licence-note">Open access under the CC BY-NC 4.0 licence.</span></p>
         </div>
     </section>
 
@@ -259,14 +278,21 @@
                 <li>Performed dN/dS analysis across four gene pathways and 12 species, using R, MEGA, Ensembl, AnAge, and NCBI databases.</li>
                 <li>Identified evidence of positive selective pressure on PARP-1 in modern mammals and presented findings to 11 colleagues.</li>
             </ul>
-            <div class="video-container">
-                <iframe
-                    src="https://speakerdeck.com/player/c1151cc34b3242a0a0f45245802b0cb1"
-                    title="Testing the Longevity Bottleneck Hypothesis"
-                    loading="lazy"
-                    allowfullscreen>
-                </iframe>
+
+            <div class="slide-viewer" aria-label="Scrollable presentation: Testing the Longevity Bottleneck Hypothesis">
+                <div class="slide-viewer-hint">Scroll within the presentation to move between slides</div>
+                <div class="slide-track" tabindex="0" aria-label="Eight presentation slides">
+                    <figure class="slide"><img src="presentations/lbh-slides/slide-1.jpg" alt="Slide 1: Testing the Longevity Bottleneck Hypothesis" loading="lazy"><figcaption>1 / 8</figcaption></figure>
+                    <figure class="slide"><img src="presentations/lbh-slides/slide-2.jpg" alt="Slide 2: What is the Longevity Bottleneck Hypothesis?" loading="lazy"><figcaption>2 / 8</figcaption></figure>
+                    <figure class="slide"><img src="presentations/lbh-slides/slide-3.jpg" alt="Slide 3: Steps for testing and dN/dS ratios" loading="lazy"><figcaption>3 / 8</figcaption></figure>
+                    <figure class="slide"><img src="presentations/lbh-slides/slide-4.jpg" alt="Slide 4: Fossil evidence of mammalian presence in dinosaur diets" loading="lazy"><figcaption>4 / 8</figcaption></figure>
+                    <figure class="slide"><img src="presentations/lbh-slides/slide-5.jpg" alt="Slide 5: Brief overview of terrestrial vertebrate longevity" loading="lazy"><figcaption>5 / 8</figcaption></figure>
+                    <figure class="slide"><img src="presentations/lbh-slides/slide-6.jpg" alt="Slide 6: Genes investigated" loading="lazy"><figcaption>6 / 8</figcaption></figure>
+                    <figure class="slide"><img src="presentations/lbh-slides/slide-7.jpg" alt="Slide 7: Representative animals used in dN/dS analysis" loading="lazy"><figcaption>7 / 8</figcaption></figure>
+                    <figure class="slide"><img src="presentations/lbh-slides/slide-8.jpg" alt="Slide 8: Method" loading="lazy"><figcaption>8 / 8</figcaption></figure>
+                </div>
             </div>
+            <p class="viewer-link"><a href="presentations/lbh-presentation.pdf" target="_blank" rel="noopener noreferrer">Open presentation PDF</a></p>
         </div>
 
         <div class="entry">
